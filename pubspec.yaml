@@ -1,0 +1,29 @@
+name: bmi_calc_flutter
+description: BMI Calculator
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  material_design_icons_flutter: ^4.0.5955
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+
+  uses-material-design: true
+
+  fonts:
+  - family: PoiretOne
+    fonts:
+    - asset: fonts/PoiretOne-Regular.ttf
