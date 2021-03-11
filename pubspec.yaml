@@ -29,8 +29,7 @@ flutter:
     fonts:
     - asset: fonts/PoiretOne-Regular.ttf
 
-  - family: Fascinate
+  - family: NovaMono
     fonts:
-      - asset: fonts/Fascinate-Regular.ttf
-
+    - asset: fonts/NovaMono-Regular.ttf
 
