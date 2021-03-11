@@ -1,5 +1,7 @@
 # bmi_calc_flutter
 
-mobile app to study Flutter and Dart
+mobile app to study Flutter and Dart. inspired by appbrewery.co Flutter video course
 
+************************
 *** WORK IN PROGRESS ***
+************************
