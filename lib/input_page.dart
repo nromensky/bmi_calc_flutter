@@ -113,6 +113,7 @@ class _InputPageState extends State<InputPage> {
                             Text(
                               selectedWeight.toString(),
                               textScaleFactor: 2,
+                              style: TextStyle(fontFamily: 'Fascinate'),
                             ),
                             Text('kg')
                           ],
