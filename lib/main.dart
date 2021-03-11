@@ -23,7 +23,7 @@ class _MyBMICalcState extends State<MyBMICalc> {
         appBarTheme: AppBarTheme(
           textTheme: TextTheme(
             headline6: TextStyle(
-              color: kTextColor,
+              color: kNotSelectedButtonTextColor,
               fontSize: 31,
               fontFamily: 'PoiretOne',
             ),
@@ -31,9 +31,9 @@ class _MyBMICalcState extends State<MyBMICalc> {
         ),
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
-            primary: kTextColor,
-            shadowColor: kBackgroundColor,
-            backgroundColor: kBackgroundColor,
+            primary: kNotSelectedButtonTextColor,
+            shadowColor: kNotSelectedButtonColor,
+            backgroundColor: kNotSelectedButtonColor,
             elevation: 3,
             textStyle: TextStyle(
               fontSize: 25,
@@ -44,7 +44,7 @@ class _MyBMICalcState extends State<MyBMICalc> {
         ),
         textTheme: TextTheme(
           bodyText2: TextStyle(
-            fontSize: 51,
+            fontSize: 25,
             fontWeight: FontWeight.bold,
             fontFamily: 'PoiretOne',
           ),
