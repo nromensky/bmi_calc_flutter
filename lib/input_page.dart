@@ -13,7 +13,7 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   enumGenderButtons selectedGenderButton;
-  int selectedWeight = 60;
+  int selectedWeight = 165;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +24,8 @@ class _InputPageState extends State<InputPage> {
         ),
         body: Column(
           children: [
+            // *********** GENDER section *************
+
             Expanded(
               flex: 3,
               child: Row(
@@ -91,6 +93,9 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
             ),
+
+            // ************** HEIGHT section **************
+
             Expanded(
                 flex: 3,
                 child: Padding(
@@ -103,7 +108,7 @@ class _InputPageState extends State<InputPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          'WEIGHT',
+                          'HEIGHT',
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -112,16 +117,16 @@ class _InputPageState extends State<InputPage> {
                           children: [
                             Text(
                               selectedWeight.toString(),
-                              textScaleFactor: 2,
+                              textScaleFactor: 2.2,
                               style: TextStyle(fontFamily: 'Fascinate'),
                             ),
-                            Text('kg')
+                            Text('cm')
                           ],
                         ),
                         Slider(
                           value: selectedWeight.toDouble(),
-                          min: 40,
-                          max: 140,
+                          min: 100,
+                          max: 240,
                           onChanged: (double value) {
                             setState(() {
                               selectedWeight = value.round();
@@ -132,6 +137,9 @@ class _InputPageState extends State<InputPage> {
                     ),
                   ),
                 )),
+
+            // *********** WEIGHT and AGE section ***********
+
             Expanded(flex: 3, child: Row()),
             Expanded(flex: 1, child: Row()),
           ],
