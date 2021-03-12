@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // my files
-import 'constants.dart';
+import 'resources.dart';
 import 'input_page.dart';
 
 void main() {
@@ -28,6 +28,14 @@ class _MyBMICalcState extends State<MyBMICalc> {
               fontFamily: 'PoiretOne',
             ),
           ),
+        ),
+        sliderTheme: SliderThemeData(
+          inactiveTrackColor: kSelectedButtonTextColor,
+          activeTrackColor: kSelectedButtonColor,
+          thumbColor: kSelectedButtonColor,
+          overlayColor: kNotSelectedButtonColor,
+          thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15.0),
+          overlayShape: RoundSliderOverlayShape(overlayRadius: 30.0),
         ),
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-import 'constants.dart';
+import 'resources.dart';
 
 enum enumGenderButtons { male, female }
 
@@ -13,8 +13,9 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   enumGenderButtons selectedGenderButton;
-  int selectedWeight = 65;
+  int selectedWeight = 55;
   int selectedHeight = 165;
+  int selectedAge = 18;
 
   @override
   Widget build(BuildContext context) {
@@ -109,21 +110,7 @@ class _InputPageState extends State<InputPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text('HEIGHT'),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.baseline,
-                          textBaseline: TextBaseline.alphabetic,
-                          children: [
-                            Text(
-                              selectedHeight.toString(),
-                              style: TextStyle(
-                                fontFamily: 'NovaMono',
-                                fontSize: 67,
-                              ),
-                            ),
-                            Text('cm')
-                          ],
-                        ),
+                        MyValueText(value: selectedHeight, unit: 'cm'),
                         Slider(
                           value: selectedHeight.toDouble(),
                           min: 100,
@@ -157,26 +144,31 @@ class _InputPageState extends State<InputPage> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text('WEIGHT'),
+                            MyValueText(value: selectedWeight, unit: 'kg'),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                RawMaterialButton(
-                                  onPressed: () {},
-                                  shape: CircleBorder(),
-                                  fillColor: kSelectedButtonColor,
-                                  constraints: BoxConstraints.tightFor(
-                                      width: 56.0, height: 56.0),
-                                  child: Icon(MdiIcons.minusThick,
+                                MyCircleButton(
+                                  icon: Icon(MdiIcons.minusThick,
                                       color: kSelectedButtonTextColor),
+                                  onPressed: () {
+                                    setState(() {
+                                      selectedWeight > kMinWeight
+                                          ? selectedWeight--
+                                          : null;
+                                    });
+                                  },
                                 ),
-                                RawMaterialButton(
-                                  onPressed: () {},
-                                  shape: CircleBorder(),
-                                  fillColor: kSelectedButtonColor,
-                                  constraints: BoxConstraints.tightFor(
-                                      width: 56.0, height: 56.0),
-                                  child: Icon(MdiIcons.plusThick,
+                                MyCircleButton(
+                                  icon: Icon(MdiIcons.plusThick,
                                       color: kSelectedButtonTextColor),
+                                  onPressed: () {
+                                    setState(() {
+                                      selectedWeight < kMaxWeight
+                                          ? selectedWeight++
+                                          : null;
+                                    });
+                                  },
                                 ),
                               ],
                             ),
@@ -193,7 +185,37 @@ class _InputPageState extends State<InputPage> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [Text('AGE')],
+                          children: [
+                            Text('AGE'),
+                            MyValueText(value: selectedAge, unit: ''),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                MyCircleButton(
+                                  icon: Icon(MdiIcons.minusThick,
+                                      color: kSelectedButtonTextColor),
+                                  onPressed: () {
+                                    setState(() {
+                                      selectedAge > kMinAge
+                                          ? selectedAge--
+                                          : null;
+                                    });
+                                  },
+                                ),
+                                MyCircleButton(
+                                  icon: Icon(MdiIcons.plusThick,
+                                      color: kSelectedButtonTextColor),
+                                  onPressed: () {
+                                    setState(() {
+                                      selectedAge < kMaxAge
+                                          ? selectedAge++
+                                          : null;
+                                    });
+                                  },
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -208,14 +230,19 @@ class _InputPageState extends State<InputPage> {
               flex: 1,
               child: Container(
                 width: double.infinity,
-                padding: EdgeInsets.all(8),
                 color: Colors.red,
-                child: Text(
-                  'CALCULATE',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'NovaMono',
-                    fontSize: 27,
+                child: TextButton(
+                  onPressed: () {},
+                  child: Column(
+                    children: [
+                      Text(
+                        'CALCULATE',
+                        textAlign: TextAlign.center,
+                      ),
+                      SizedBox(
+                        height: 10,
+                      )
+                    ],
                   ),
                 ),
               ),
