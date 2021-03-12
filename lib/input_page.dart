@@ -1,3 +1,4 @@
+import 'package:bmi_calc_flutter/result_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -155,6 +156,7 @@ class _MyInputPageState extends State<MyInputPage> {
                                     setState(() {
                                       selectedWeight > kMinWeight
                                           ? selectedWeight--
+                                          // ignore: unnecessary_statements
                                           : null;
                                     });
                                   },
@@ -166,6 +168,7 @@ class _MyInputPageState extends State<MyInputPage> {
                                     setState(() {
                                       selectedWeight < kMaxWeight
                                           ? selectedWeight++
+                                          // ignore: unnecessary_statements
                                           : null;
                                     });
                                   },
@@ -198,6 +201,7 @@ class _MyInputPageState extends State<MyInputPage> {
                                     setState(() {
                                       selectedAge > kMinAge
                                           ? selectedAge--
+                                          // ignore: unnecessary_statements
                                           : null;
                                     });
                                   },
@@ -209,6 +213,7 @@ class _MyInputPageState extends State<MyInputPage> {
                                     setState(() {
                                       selectedAge < kMaxAge
                                           ? selectedAge++
+                                          // ignore: unnecessary_statements
                                           : null;
                                     });
                                   },
@@ -230,9 +235,31 @@ class _MyInputPageState extends State<MyInputPage> {
               flex: 1,
               child: Container(
                 width: double.infinity,
-                color: Colors.red,
                 child: TextButton(
-                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    primary: selectedGenderButton != null
+                        ? kSelectedButtonTextColor
+                        : kNotSelectedButtonTextColor,
+                    backgroundColor: selectedGenderButton != null
+                        ? Colors.redAccent
+                        : kNotSelectedButtonColor,
+                  ),
+                  onPressed: () {
+                    selectedGenderButton != null
+                        ? Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MyResultPage(
+                                gender: selectedGenderButton,
+                                age: selectedAge,
+                                height: selectedHeight,
+                                weight: selectedWeight,
+                              ),
+                            ),
+                          )
+                        // ignore: unnecessary_statements
+                        : null;
+                  },
                   child: Text(
                     'CALCULATE',
                     textAlign: TextAlign.center,
