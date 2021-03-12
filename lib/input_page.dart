@@ -6,12 +6,12 @@ import 'resources.dart';
 
 enum enumGenderButtons { male, female }
 
-class InputPage extends StatefulWidget {
+class MyInputPage extends StatefulWidget {
   @override
-  _InputPageState createState() => _InputPageState();
+  _MyInputPageState createState() => _MyInputPageState();
 }
 
-class _InputPageState extends State<InputPage> {
+class _MyInputPageState extends State<MyInputPage> {
   enumGenderButtons selectedGenderButton;
   int selectedWeight = 55;
   int selectedHeight = 165;

@@ -58,7 +58,7 @@ class _MyBMICalcState extends State<MyBMICalc> {
           ),
         ),
       ),
-      home: InputPage(),
+      home: MyInputPage(),
     );
   }
 }
