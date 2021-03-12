@@ -233,16 +233,9 @@ class _InputPageState extends State<InputPage> {
                 color: Colors.red,
                 child: TextButton(
                   onPressed: () {},
-                  child: Column(
-                    children: [
-                      Text(
-                        'CALCULATE',
-                        textAlign: TextAlign.center,
-                      ),
-                      SizedBox(
-                        height: 10,
-                      )
-                    ],
+                  child: Text(
+                    'CALCULATE',
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
