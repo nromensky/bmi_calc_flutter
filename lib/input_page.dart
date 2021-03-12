@@ -147,20 +147,55 @@ class _InputPageState extends State<InputPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  TextButton(
-                    onPressed: null,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [Text('WEIGHT')],
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: TextButton(
+                        onPressed: null,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text('WEIGHT'),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                RawMaterialButton(
+                                  onPressed: () {},
+                                  shape: CircleBorder(),
+                                  fillColor: kSelectedButtonColor,
+                                  constraints: BoxConstraints.tightFor(
+                                      width: 56.0, height: 56.0),
+                                  child: Icon(MdiIcons.minusThick,
+                                      color: kSelectedButtonTextColor),
+                                ),
+                                RawMaterialButton(
+                                  onPressed: () {},
+                                  shape: CircleBorder(),
+                                  fillColor: kSelectedButtonColor,
+                                  constraints: BoxConstraints.tightFor(
+                                      width: 56.0, height: 56.0),
+                                  child: Icon(MdiIcons.plusThick,
+                                      color: kSelectedButtonTextColor),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
-                  TextButton(
-                    onPressed: null,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [Text('AGE')],
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: TextButton(
+                        onPressed: null,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [Text('AGE')],
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -173,9 +208,16 @@ class _InputPageState extends State<InputPage> {
               flex: 1,
               child: Container(
                 width: double.infinity,
-                padding: EdgeInsets.all(16),
+                padding: EdgeInsets.all(8),
                 color: Colors.red,
-                child: Text('CALCULATE'),
+                child: Text(
+                  'CALCULATE',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'NovaMono',
+                    fontSize: 27,
+                  ),
+                ),
               ),
             ),
           ],
