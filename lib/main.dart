@@ -44,7 +44,7 @@ class _MyBMICalcState extends State<MyBMICalc> {
             backgroundColor: kNotSelectedButtonColor,
             elevation: 3,
             textStyle: TextStyle(
-              fontSize: 25,
+              fontSize: 23,
               fontWeight: FontWeight.bold,
               fontFamily: 'PoiretOne',
             ),
@@ -52,7 +52,7 @@ class _MyBMICalcState extends State<MyBMICalc> {
         ),
         textTheme: TextTheme(
           bodyText2: TextStyle(
-            fontSize: 25,
+            fontSize: 23,
             fontWeight: FontWeight.bold,
             fontFamily: 'PoiretOne',
           ),

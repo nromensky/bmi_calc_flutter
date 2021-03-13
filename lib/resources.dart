@@ -24,7 +24,7 @@ class MyCircleButton extends StatelessWidget {
       onPressed: this.onPressed,
       shape: CircleBorder(),
       fillColor: kSelectedButtonColor,
-      constraints: BoxConstraints.tightFor(width: 56.0, height: 56.0),
+      constraints: BoxConstraints.tightFor(width: 45, height: 45),
       child: this.icon,
     );
   }
@@ -47,7 +47,7 @@ class MyValueText extends StatelessWidget {
           value.toString(),
           style: TextStyle(
             fontFamily: 'NovaMono',
-            fontSize: 53,
+            fontSize: 39,
           ),
         ),
         Text(this.unit),
