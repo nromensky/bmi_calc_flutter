@@ -8,6 +8,6 @@ Ruben Vaalt](https://dribbble.com/shots/4585382-Simple-BMI-Calculator)
 <img height=500 src=https://user-images.githubusercontent.com/25114540/110957880-202dc600-835d-11eb-9bf2-9fc4beda9bff.png>
 
 
-### Importing It
+### How to Import
 
 in Android Studio -> File -> New -> Project from Version Control
